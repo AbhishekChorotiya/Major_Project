@@ -14,9 +14,9 @@ const Main_page = ()=>{
             </div>
             <div className="content">
                 <h1 className="heading">Login as ?</h1>
-                <Card text='Student'/>
-                <Card text='Teacher'/>
-                <Card text='Admin'/>
+                <Card text='Student' address='/student'/>
+                <Card text='Faculty' address='/faculty'/>
+                <Card text='Admin' address='/admin'/>
 
             </div>
 

@@ -5,11 +5,11 @@ const Card = (props)=>{
 
 
     return (
-        <div className="card">
+        <a className="card" href={props.address}>
 
-            <a className="card_text">{props.text}</a>
+            <span className="card_text">{props.text}</span>
 
-        </div>
+        </a>
     );
 }
 
