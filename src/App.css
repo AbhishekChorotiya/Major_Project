@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   text-align: center;
+  color: #19214d;
 }
 
 html {
@@ -22,7 +23,10 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #fff;
+  color: white;
+}
+.nav h2{
+  color: #ffffff;
 }
 
 /* --------------login box container----------- */
@@ -88,4 +92,9 @@ html {
   font-size: 0.8rem;
   color: #fcb366;
   /* align-self: flex-end; */
+}
+
+.top-reg {
+  margin-top: 3rem;
+  font-size: 1.5rem;
 }

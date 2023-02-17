@@ -18,7 +18,7 @@ const Admin_dash = ()=>{
                     <a href="/">
                         Manage Students
                     </a>
-                    <a href="/">
+                    <a href="/facultyReg">
                         Register Faculty
                     </a>
                 </div>

@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Admin_dash from "./components/admin/admin_dash";
 import AdminLogin from "./components/admin/admin_login/admin_login";
 import FacultyLogin from "./components/faculty/facultyLogin/FacultyLogin";
+import FacultyReg from "./components/faculty/facultyReg/FacultyReg";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
           <Route exact path="/" element={<Main_page />} />
           <Route exact path="admin" element={<AdminLogin />} />
           <Route exact path="faculty" element={<FacultyLogin />} />
+          <Route exact path="adminDashboard" element={<Admin_dash />} />
+          <Route exact path="facultyReg" element={<FacultyReg />} />
         </Routes>
       </BrowserRouter>
     </Fragment>
