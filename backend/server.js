@@ -37,6 +37,14 @@ app.post('/adminLogin',(req,res)=>{
 
 })
 
+app.post('/regStudents',(req,res)=>{
+
+    for(let val in req.body){
+      console.log(req.body[val].name)
+    }
+
+})
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
