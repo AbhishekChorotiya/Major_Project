@@ -12,8 +12,13 @@ const cookieParser = require("cookie-parser");
 
 const facultyObj = require("./models/faculty");
 
+//Middleware authentication
+
+const facultyAuth = require("./middleware/facultyAuth")
+
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use(cookieParser());
 // app.get('/', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 // });
@@ -24,7 +29,11 @@ app.use(
     extended: false,
   })
 );
-app.use(cors());
+app.use(cors({
+  credentials: true,
+  origin: 'http://localhost:3000'
+}));
+
 
 // CONNECTING SERVER TO MONGODB DATABASE --------------------------------------------------------
 mongoose.connect("mongodb://127.0.0.1:27017/LMS");
@@ -33,6 +42,11 @@ var db = mongoose.connection;
 db.on("error", console.log.bind(console, "Connection Error"));
 db.once("open", () => {
   console.log("Connection Successful");
+});
+
+app.get('/setcookie', (req, res) => {
+  res.cookie('mycookie', 'cookievalue');
+  res.send('Cookie set successfully');
 });
 
 app.get("/", (req, res) => {
@@ -86,6 +100,22 @@ app.post("/regFaculty", async (req, res) => {
   // res.json('hi')
 });
 
+app.post("/facultyLogin", async (req, res) => {
+  try {
+      const user = await facultyObj.findByCredentials(
+          req.body.email,
+          req.body.password
+      );
+      const token = await user.generateAuthToken();
+      console.log(token)
+      res.cookie("jwt", token)
+      return res.send({ message: "LoggedIn" })
+      // res.redirect("/home");
+  } catch (e) {
+      // res.send("Invalid Credentials");
+      return res.send({message:'error'})
+  }
+});
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
