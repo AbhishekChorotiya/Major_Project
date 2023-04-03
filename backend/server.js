@@ -7,7 +7,7 @@ const mongodb = require("mongodb");
 const mongoose = require("mongoose");
 const ShortUniqueId = require("short-unique-id");
 const uid = new ShortUniqueId({ length: 4 });
-
+const cookieParser = require("cookie-parser");
 //Objects from models
 
 const facultyObj = require("./models/faculty");

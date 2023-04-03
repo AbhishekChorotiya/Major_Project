@@ -14,8 +14,8 @@ const FacultyLogin = () => {
           <h4>Login</h4>
         </div>
         <div class="form">
-          <input class="inp" type="text" placeholder="username" />
-          <input class="inp" type="password" placeholder="password" />
+          <input class="inp" type="text" name='username' placeholder="username" />
+          <input class="inp" type="password" name="password" placeholder="password" />
           <button class="inp btn">Login</button>
         </div>
         <a href="#" id="fp">
