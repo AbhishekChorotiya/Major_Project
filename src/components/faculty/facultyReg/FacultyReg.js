@@ -1,6 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
 import FacultyCss from "./FacultyReg.module.css";
 const FacultyReg = () => {
+  const [name, setName] = useState("");
+  const [contact, setContact] = useState("");
+  const [gender, setGender] = useState("");
+  const [email, setEmail] = useState("");
+
+  const handleChange = (e) => {
+    // console.log(e.target.name)
+
+    if (e.target.name == "name") {
+      setName(e.target.value);
+    }
+    if (e.target.name == "contact") {
+      setContact(e.target.value);
+    }
+    if (e.target.name == "gender") {
+      setGender(e.target.value);
+    }
+    if (e.target.name == "email") {
+      setEmail(e.target.value);
+    }
+
+    console.log(e.target.value);
+  };
+
+  const handleSubmit = async ()=>{
+
+    const post_data = {
+      name,contact,gender,email
+    }
+
+    const res = await fetch('http://localhost:5000/regFaculty',{
+      method:'post',
+      headers:{
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(post_data)
+    })
+
+    const data = await res.json()
+    console.log(data)
+    alert(data.msg)
+
+
+
+  }
+
   return (
     <>
       <div className={FacultyCss.container}>
@@ -19,6 +65,8 @@ const FacultyReg = () => {
               className={FacultyCss.inp}
               type="text"
               placeholder="Enter Full Name"
+              name="name"
+              onChange={handleChange}
             />
 
             <label className={FacultyCss.labl} for="Contact Number:">
@@ -26,8 +74,10 @@ const FacultyReg = () => {
             </label>
             <input
               className={FacultyCss.inp}
-              type="text"
+              type="number"
               placeholder="+91 XXXXXXXXXX"
+              name="contact"
+              onChange={handleChange}
             />
 
             <label className={FacultyCss.labl} for="gender">
@@ -40,6 +90,7 @@ const FacultyReg = () => {
                 type="radio"
                 value="Male"
                 name="gender"
+                onChange={handleChange}
               />{" "}
               <label for="">Female</label>
               <input
@@ -47,6 +98,7 @@ const FacultyReg = () => {
                 type="radio"
                 value="Female"
                 name="gender"
+                onChange={handleChange}
               />{" "}
               <label for="">Other</label>
               <input
@@ -54,6 +106,7 @@ const FacultyReg = () => {
                 type="radio"
                 value="Other"
                 name="gender"
+                onChange={handleChange}
               />{" "}
             </div>
 
@@ -64,27 +117,13 @@ const FacultyReg = () => {
               className={FacultyCss.inp}
               type="email"
               placeholder="xyz@iiitkota.ac.in"
+              name="email"
+              onChange={handleChange}
             />
 
-            <label className={FacultyCss.labl} for="Password">
-              Password
-            </label>
-            <input
-              className={FacultyCss.inp}
-              type="password"
-              placeholder="******"
-            />
-
-            <label className={FacultyCss.labl} for="conf-password">
-              Confirm Password
-            </label>
-            <input
-              className={FacultyCss.inp}
-              type="password"
-              placeholder="******"
-            />
-
-            <button className={FacultyCss.btn}>Submit</button>
+            <button className={FacultyCss.btn} onClick={handleSubmit}>
+              Submit
+            </button>
           </div>
         </div>
       </div>

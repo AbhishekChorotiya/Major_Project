@@ -3,6 +3,8 @@ import './facultyDash.css';
 
 const Faculty_dash = ()=>{
 
+
+
     return (
         <div className="outter">
 

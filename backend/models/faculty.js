@@ -2,12 +2,14 @@ const mongoose = require('mongoose');
 
 
 const facultySchema = new mongoose.Schema({
-
+    Id:{
+        type: String,
+    },
     Name : {
         type: String,
     },
-    Phone: {
-        type: Number,
+    Contact: {
+        type: String,
     },
     Gender: {
         type: String,
