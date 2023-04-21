@@ -3,6 +3,8 @@ import Card from "./cards/card";
 import "./main_page.css";
 
 const Main_page = () => {
+
+  console.log('checking')
   return (
     <div className="outter">
       <div className="navbar">

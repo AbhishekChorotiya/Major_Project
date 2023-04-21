@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import * as XLSX from 'xlsx'
 
 const RegStudents = ()=>{
@@ -38,11 +38,10 @@ const RegStudents = ()=>{
         
         data = objectKeysToLowerCase(data)
         postData(data)
-
     }
 
     const postData = async (data)=>{
-
+        console.log(data)
         const res = await fetch('http://localhost:5000/regStudents',{
 
             method:'post',
@@ -52,6 +51,9 @@ const RegStudents = ()=>{
             body: JSON.stringify(data)
 
         })
+
+        const out = await res.json()
+        console.log(out)
 
     }
 

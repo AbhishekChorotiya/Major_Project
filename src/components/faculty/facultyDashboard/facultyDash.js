@@ -1,9 +1,16 @@
 import React from "react";
 import './facultyDash.css';
+import { useNavigate } from "react-router-dom";
 
 const Faculty_dash = ()=>{
 
+    const navigatee = useNavigate()
 
+    function handleClick(){
+        navigatee('/quizzform')
+    }
+
+    console.log("Abhishek")
 
     return (
         <div className="outter">
@@ -22,6 +29,9 @@ const Faculty_dash = ()=>{
                     </a>
                     <a href="/facultyReg">
                         Add Courses
+                    </a>
+                    <a href onClick={handleClick}>
+                        Create Quiz
                     </a>
                 </div>
 

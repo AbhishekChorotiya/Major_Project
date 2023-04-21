@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: inherit;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Global */
+.center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* semester-box */
+.semesterBox {
+    position: absolute;
+    top: 7rem;
+    right: 1rem;
+    height: 3rem;
+    width: 7rem;
+    border: solid #172a4d 0.1rem;
+    border-radius: 0.4rem;
+
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.semesterBox span {
+    margin: .06rem;
+}
+
+#semHead {
+    height: 1.7rem;
+    justify-content: center;
+}
+
+/* --------------- */
+.nav {
+    width: 100%;
+    height: 6rem;
+    background: linear-gradient(90deg, #172a4d 0%, rgba(25, 26, 77, 1) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+
+}
+.nav span{
+    color: #fff;
+}
+
+.front {
+    display: flex;
+    height: calc(100% - 6rem);
+    width: 100%;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    width: 18rem;
+    align-items: center;
+    border-right: solid #172a4d 0.11rem;
+
+}
+
+.options button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 92%;
+    height: 2.5rem;
+    border: none;
+    margin: 0.3rem 0 0 0;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    background: none;
+    border: solid grey 0.1rem;
+    border-radius: 0.2rem;
+}
+
+.options button:hover {
+    background-color: #e8ebee;
+    transition: ease-in 0.1s;
+}
+
+.dashboard {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+/* --------------profile---------- */
+
+.studentInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 30rem;
+    height: 90%;
+    align-self: center;
+    margin-left: 2.5rem;
+    border: solid #172a4d 0.11rem;
+}
+
+hr {
+    width: 70%;
+    height: 0.1rem;
+}
+
+.profile {
+    height: 100%;
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile1 {
+    width: 100%;
+    height: 30%;
+    /* background-color: ; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pic {
+    width: 8rem;
+    height: 8rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.profile2 {
+    width: 100%;
+    height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.infoBox {
+    width: 80%;
+    height: 1rem;
+    margin: 1rem 0 0 0;
+    /* border: sol/id grey 0.1rem; */
+    border-radius: 0.2rem;
+}
+
+/* --------------------------- */

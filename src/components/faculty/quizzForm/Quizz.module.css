@@ -1,0 +1,10 @@
+.inp{
+    width: 30rem;
+    height: 3rem;
+    padding: 0;
+    border: none;
+    outline: none;
+    border-bottom: 0.1rem solid rgb(10, 10, 107);
+    text-decoration: bold;
+    font-size: 2rem;
+}
